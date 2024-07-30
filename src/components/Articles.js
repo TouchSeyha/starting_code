@@ -4,15 +4,15 @@ import { selectArticles, filterArticles } from "../features/articles/articlesSli
 import Search from "./Search";
 
 // Import Link and useSearchParams from React Router
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Articles () {
   const articles = useSelector(selectArticles);
 
   // Grab URLSearchParams object from useSearchParams hook
-  
+  const [ searchParams, setSearchParams ] = useSearchParams();
   // Get the queryParams from object returned from useSearchParams and set to `title`
-  const title = '';
+  const title = searchParams.get("title");
 
   const filteredArticles = title ? filterArticles(title, articles) : Object.values(articles)
 

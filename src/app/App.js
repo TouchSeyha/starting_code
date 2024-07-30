@@ -31,10 +31,6 @@ const router = createBrowserRouter(
     </Route>
   )
 );
-  /* Wrap this Root Route to create Router here */
-  <Route path="/" element={ <Root/> }>
-    {/* Add Routes here! */}
-  </Route>
 
 function App() {
   return (
